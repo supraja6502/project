@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <div id="myformdiv">
+            <h2>Enter Student Details and Marks</h2>
+            <form id="myform" method="post">
+                <label>Student name:</label>
+                <input type="text" id="sname"><br><br>
+                <label>Roll number:&nbsp;</label>
+                <input type="text" id="roll no"><br><br>
+                <label>Subject1 Marks:</label>
+                <input type="text" id="sub1name" placeholder="sub1";
+                <input type="number" id="sub1name"><br><br>
+                <label>Subject2 Marks:</label>
+                <input type="text" id="sub2name" placeholder="sub2";
+                <input type="sub2name" id="marks2"><br><br>
+                <label>Subject3 Marks:</label>
+                <input type="text" id="sub3name" placeholder="sub3";
+                <input type="sub3name" id="marks3"><br><br>
+                <input type="button onclick=function()" value="Submit">
+            </form>
+        </div>
+        <script>
+            function myfun(){
+                document.getElementId("myformdiv").style.display="none";
+                let myInfo=
+                <div class ='sdetails'>
+                    <h3>student details and marks</h3>
+                    <table classtable-bordered table-primary>
+                        <tr>
+                            <td class="bg-primary">Name </td> <td>${document.getElementById('sname').value}</td>
+
+                        </tr>
+                        <tr>
+                            <td class="bg-primary"> HallTicket Number </td> <td>${document.getElementById('roll no').value}</td>
+                        </tr>
+                        <tr>
+                            <td>${document.getElementById('subname1').value}Marks</td><td>${document.getElementById('Marks1').value}</td>
+
+                        </tr>
+                        <tr>
+                            <td>${document.getElementById('subname2').value}Marks</td><td>${document.getElementById('marks2').value}</td>
+                            </tr>
+                            <tr>
+                                <td>${document.getElementById('subname3').value}Marks</td><td>${document.getElementById('marks3').value}</td>
+                                </tr>
+
+                    </table>
+                </div>  
+                ;
+                document.getElementId('mydata').innerHTML=myinfo;
+            }         
+    </script>
+
+</body>
+</html>

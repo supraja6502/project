@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function getWeather()
+        {
+            let request=new XMLHttpRequest();
+            let zip=document.getElementById('tb1').value;
+            request.open('GET','https://api.openweathermap.org/data/2.5/weather?q='+zip+'&appid=93f26e3c57081a6210de53b8dcfdfea4',true);
+            request.onload = function() 
+            {
+                if(request.status >=200 && request.status < 400)
+                {
+                    let data = JSON.parse(request.responseText);
+                    console.log(data);
+                    var icon="https://openweathermap.org/img/w/"+data.weather[0].icon+".png"
+                    document.getElementById('temp').innerHTML=data.main.temp+'F';
+                    document.getElementById('Country').innerHTML=data.sys.temp;
+                    document.getElementById('City').innerHTML=data.name;
+                    let tim=new Data(data.sys.sunrise*1000);
+                    document.getElementById('sunset').innerHTML=tim;
+                    let tim1=new Data(data.sys.sunset*1000);
+                    document.getElementById('sunset').innerHTML=tim1;
+                    document.getElementById('windspeed').innerHTML=data.wind.speed;
+                    document.getElementById('humid').innerHTML=data.main.humidity;
+                }
+
+                else 
+                {
+                    console.log('failed connecting')
+                }
+
+
+            }
+            request.onerror=function(){
+                console.log("Error")
+            }
+            request.send();
+        }
+    </script>
+</body>
+</html>
